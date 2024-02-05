@@ -15,7 +15,7 @@
 
     <div class="flyingflag">
       <marquee>
-        <img src="background3.png" height="50" id="mainpic" />
+        <img src="background3.png" height="50" />
       </marquee>
     </div>
 
@@ -23,18 +23,16 @@
       <div class="mainWrapper">
         <div class="title">
           <img src="explosion.gif" height="50" />
-          SS re(i)seblogg
+          <div>
+            SS re(i)seblogg
+          </div>
           <img src="explosion.gif" height="50" />
         </div>
       </div>
-      <div class="letsgo" id="letsgo">
-        <img src="letsgo.jpg" width="100%" />
+      <div class="letsgo">
+        <img src="letsgo.jpg" width="100%" id="mainpic" />
         <div id="easteregg" class="easteregg"></div>
       </div>
-      <div class="letsgo" id="secret">
-        <img src="yourmom.gif" width="100%" />
-      </div>
-
 
       <div class="about-wrapper">
         <a href="#aboutsimon">
@@ -132,10 +130,7 @@
   <script>
     function easteregg() {
       alert("Secret mode activated!");
-      const letsgo = document.getElementById("letsgo")
-      letsgo.style.display = "none";
-      const secret = document.getElementById("secret")
-      secret.style.display = "inherit";
+      document.getElementById("mainpic").src = "yourmom.gif"
     }
     document.getElementById("easteregg").addEventListener("click", easteregg, false);
 

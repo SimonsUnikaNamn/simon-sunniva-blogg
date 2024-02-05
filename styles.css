@@ -19,12 +19,20 @@ body {
   border-top: 1rem dotted pink;
   background-image: url("background2.jpg");
   background-repeat: repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 .4rem;
 }
 
 .third {
   border-top: 1rem dashed blue;
   background-image: url("background4.jpg");
   background-repeat: repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 .4rem 2rem .4rem;
 }
 
 .wrapper {
@@ -39,6 +47,8 @@ body {
   font-size: 3rem;
   color: white;
   font-weight: 600;
+  display: flex;
+  flex-direction: row;
 }
 
 .text {
@@ -104,11 +114,12 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 5rem;
+  gap: .5rem;
 }
 
 .abouttext {
   background-color: hotpink;
+  flex: 2;
 }
 
 .aboutsunnivaimage {
@@ -117,8 +128,7 @@ body {
   background-color: white;
   background-position: center;
   background-size: cover;
-  width: 30%;
-  height: 30rem;
+  flex: 1;
 }
 
 .aboutsimonimage {
@@ -127,8 +137,7 @@ body {
   background-color: white;
   background-position: center;
   background-size: cover;
-  width: 30%;
-  height: 30rem;
+  flex: 1;
 }
 
 #secret {
