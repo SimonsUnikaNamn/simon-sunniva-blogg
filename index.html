@@ -7,45 +7,135 @@
 
 <body>
 
-  <marquee>
-    <div class="text"><img src="underconstruction.gif" height="50" /> Under construction... <img
-        src="underconstruction.gif" height="50" /></div>
-  </marquee>
-
-  <div class="flyingflag">
+  <div class="first">
     <marquee>
-      <img src="background3.png" height="50" />
+      <div class="text"><img src="underconstruction.gif" height="50" /> Under construction... <img
+          src="underconstruction.gif" height="50" /></div>
     </marquee>
+
+    <div class="flyingflag">
+      <marquee>
+        <img src="background3.png" height="50" id="mainpic" />
+      </marquee>
+    </div>
+
+    <div class="wrapper">
+      <div class="mainWrapper">
+        <div class="title">
+          <img src="explosion.gif" height="50" />
+          SS re(i)seblogg
+          <img src="explosion.gif" height="50" />
+        </div>
+      </div>
+      <div class="letsgo" id="letsgo">
+        <img src="letsgo.jpg" width="100%" />
+        <div id="easteregg" class="easteregg"></div>
+      </div>
+      <div class="letsgo" id="secret">
+        <img src="yourmom.gif" width="100%" />
+      </div>
+
+
+      <div class="about-wrapper">
+        <a href="#aboutsimon">
+          <div class="about">Om Simon</div>
+        </a>
+        <a href="#aboutsunniva">
+          <div class="about">Om Sunniva</div>
+        </a>
+      </div>
+
+      <div class="guestbook">Guestbook is coming...</div>
+
+      <div class="about-wrapper">
+        <div class="about">Re(i)s(e)plan</div>
+      </div>
+
+      <div class="counter">Fans:</div>
+      <img src="counter.png" height="50" />
+    </div>
   </div>
 
-  <div class="wrapper">
-    <div class="mainWrapper">
-      <div class="title">
-        <img src="explosion.gif" height="50" />
-        SS re(i)seblogg
-        <img src="explosion.gif" height="50" />
+  <div class="second">
+    <div class="aboutwrapper" id="aboutsunniva">
+      <div class="aboutsunnivaimage">
+      </div>
+      <div class="abouttext">
+        <h1>Sunniva</h1>
+        <h4>Stats</h4>
+        <table>
+          <tr>
+            <td><b>Age</b></td>
+            <td>35-ish</td>
+          </tr>
+          <tr>
+            <td><b>Nationality</b></td>
+            <td>Norwegian?</td>
+          </tr>
+          <tr>
+            <td><b>Main strength</b></td>
+            <td>Worked on Game of Thrones</td>
+          </tr>
+          <tr>
+            <td><b>Main weakness</b></td>
+            <td>Simon</td>
+          </tr>
+          <tr>
+            <td><b>Main contribution to the trip</b></td>
+            <td>Duolingo-Spanish</td>
+          </tr>
+        </table>
       </div>
     </div>
-    <div class="letsgo">
-      <img src="letsgo.jpg" width="100%" />
-      <div id="easteregg" class="easteregg"></div>
-    </div>
-
-    <div class="about-wrapper">
-      <div class="about">Om Simon</div>
-      <div class="about">Om Sunniva</div>
-    </div>
-    <div class="about-wrapper">
-      <div class="about">Re(i)s(e)plan</div>
-    </div>
-
-    <div class="counter">Fans:</div>
-    <img src="counter.png" height="50" />
   </div>
+
+  <div class="third">
+    <div class="aboutwrapper" id="aboutsimon">
+      <div class="abouttext">
+        <h1>Simon</h1>
+        <h4>Stats</h4>
+        <table>
+          <tr>
+            <td><b>Age</b></td>
+            <td>35-ish</td>
+          </tr>
+          <tr>
+            <td><b>Nationality</b></td>
+            <td>Swedish</td>
+          </tr>
+          <tr>
+            <td><b>Main strength</b></td>
+            <td>Creating websites</td>
+          </tr>
+          <tr>
+            <td><b>Main weakness</b></td>
+            <td>Sometimes too focused on not making mistakes</td>
+          </tr>
+          <tr>
+            <td><b>Main weakness</b></td>
+            <td>Sometimes too focused on not making mistakes</td>
+          </tr>
+          <tr>
+            <td><b>Pokemon of choice</b></td>
+            <td>Snorlax</td>
+          </tr>
+          <tr>
+            <td><b>Main contribution to the trip</b></td>
+            <td>General factiods about places we will visit</td>
+          </tr>
+        </table>
+      </div>
+      <div class="aboutsimonimage">
+      </div>
+    </div>
   </div>
   <script>
     function easteregg() {
-      alert("Secret activated!")
+      alert("Secret mode activated!");
+      const letsgo = document.getElementById("letsgo")
+      letsgo.style.display = "none";
+      const secret = document.getElementById("secret")
+      secret.style.display = "inherit";
     }
     document.getElementById("easteregg").addEventListener("click", easteregg, false);
 
