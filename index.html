@@ -54,7 +54,12 @@
     </div>
   </div>
 
+  <div id="blogg">
+    <div id="blogentrywrapper">
+    </div>
   </div>
+
+
   <script>
     function easteregg() {
       alert("Secret mode activated!");
@@ -62,6 +67,30 @@
     }
     document.getElementById("easteregg").addEventListener("click", easteregg, false);
 
+    const fetchBlogPosts = async () => {
+      const res = await fetch('https://www.googleapis.com/blogger/v3/blogs/5639761990590248969/posts?key=AIzaSyANG8DwLlb4ZSJDN0QHGtzUFQ2X4MHKzXY')
+      const resJson = await res.json()
+      const blogg = document.getElementById("blogentrywrapper")
+      const items = resJson.items;
+
+      items.forEach(i => {
+        const entry = document.createElement("div")
+        entry.className = "blogentry"
+        const title = document.createElement("h4")
+        if (i.title.trim() !== "") {
+          title.innerText = i.title.trim()
+          entry.appendChild(title)
+        }
+        const content = document.createElement("div")
+        content.innerHTML = i.content
+        entry.appendChild(content)
+        const published = document.createElement("div")
+        published.innerText = i.published
+        entry.appendChild(published)
+        blogg.appendChild(entry)
+      })
+    }
+    fetchBlogPosts()
   </script>
 </body>
 

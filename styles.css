@@ -59,6 +59,27 @@ body {
   background-image: url("nepalbackground.jpeg");
 }
 
+#blogg {
+  border-top: 1rem dotted pink;
+  background-image: url("blogbackground.jpeg");
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 .4rem;
+}
+
+#blogentrywrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.blogentry {
+  border: .1rem solid yellow;
+  color: white;
+  background-color: #222;
+}
+
 .third {
   border-top: 1rem dashed blue;
   display: flex;
