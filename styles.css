@@ -120,6 +120,7 @@ body {
 .abouttext {
   background-color: hotpink;
   flex: 2;
+  padding: 1rem;
 }
 
 .aboutsunnivaimage {
