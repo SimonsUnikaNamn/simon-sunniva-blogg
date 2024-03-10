@@ -84,9 +84,10 @@
         const content = document.createElement("div")
         content.innerHTML = i.content
         entry.appendChild(content)
-        const published = document.createElement("div")
-        published.innerText = i.published
-        entry.appendChild(published)
+        const author = document.createElement("div")
+        author.innerText = `${i.author.displayName} ${i.published.split("T")[0]}`
+        author.className = "author"
+        entry.appendChild(author)
         blogg.appendChild(entry)
       })
     }

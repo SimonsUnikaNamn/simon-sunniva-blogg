@@ -39,8 +39,9 @@ body {
 .travel {
   background-repeat: repeat;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding:10rem 0;
 }
 
@@ -72,12 +73,19 @@ body {
 #blogentrywrapper {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.author {
+  font-size: .9rem;
 }
 
 .blogentry {
   border: .1rem solid yellow;
   color: white;
   background-color: #222;
+  padding: 1rem;
 }
 
 .third {
@@ -173,7 +181,7 @@ body {
 .abouttext {
   background-color: hotpink;
   flex: 2;
-  padding: 1rem;g
+  padding: 1rem;
 }
 
 .aboutsunnivaimage {
