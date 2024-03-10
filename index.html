@@ -37,9 +37,9 @@
         </div>
       </div>
       <div id="letgso" class="letsgo">
-        <img src="letsgo.jpg" width="100%" id="mainpic" />
+        <img id="mainpic" src="letsgo.jpg" width="100%" id="mainpic" />
         <div id="easteregg" class="easteregg"></div>
-        <video id="secrectvideo" style="display: none;" src="secret.webm" style="width: 100%;" autoplay loop
+        <video id="secrectvideo" src="secret.webm" style="opacity: 0; height: 0px; width: 100%;" autoplay loop
           muted></video>
       </div>
 
@@ -73,16 +73,15 @@
     function easteregg() {
       alert("Secret mode activated!");
       const letsGoDiv = document.getElementById("letgso")
-      letsGoDiv.innerHTML = '';
-      const video = document.createElement("video");
-      video.src = "secret.webm";
-      video.style.width = "100%";
-      video.autoplay = true;
-      video.loop = true;
+      letsGoDiv.removeChild(document.getElementById("mainpic"))
+      letsGoDiv.removeChild(document.getElementById("easteregg"))
+      const secrectvideo = document.getElementById("secrectvideo")
+      secrectvideo.style.opacity = "100";
+      secrectvideo.style.height = "inherit";
+      secrectvideo.muted = false;
       window.setTimeout(() => {
-        video.muted = true;
+        secrectvideo.muted = true;
       }, 8000)
-      letsGoDiv.appendChild(video);
     }
     document.getElementById("easteregg").addEventListener("click", easteregg, false);
 
