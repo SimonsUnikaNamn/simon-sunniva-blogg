@@ -29,9 +29,11 @@
           <img src="explosion.gif" height="50" />
         </div>
       </div>
-      <div class="letsgo">
+      <div id="letgso" class="letsgo">
         <img src="letsgo.jpg" width="100%" id="mainpic" />
         <div id="easteregg" class="easteregg"></div>
+        <video id="secrectvideo" style="display: none;" src="secret.webm" style="width: 100%;" autoplay loop
+          muted></video>
       </div>
 
       <div class="about-wrapper">
@@ -63,7 +65,17 @@
   <script>
     function easteregg() {
       alert("Secret mode activated!");
-      document.getElementById("mainpic").src = "yourmom.gif"
+      const letsGoDiv = document.getElementById("letgso")
+      letsGoDiv.innerHTML = '';
+      const video = document.createElement("video");
+      video.src = "secret.webm";
+      video.style.width = "100%";
+      video.autoplay = true;
+      video.loop = true;
+      window.setTimeout(() => {
+        video.muted = true;
+      }, 8000)
+      letsGoDiv.appendChild(video);
     }
     document.getElementById("easteregg").addEventListener("click", easteregg, false);
 
