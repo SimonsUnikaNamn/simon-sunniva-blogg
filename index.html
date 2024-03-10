@@ -40,7 +40,7 @@
         <img id="mainpic" src="letsgo.jpg" width="100%" id="mainpic" />
         <div id="easteregg" class="easteregg"></div>
         <video id="secrectvideo" src="secret.mp4" type="video/mp4" style="opacity: 0; height: 0px; width: 100%;"
-          autoplay loop playsinline muted></video>
+          autoplay loop playsinline muted controls></video>
       </div>
 
       <div class="about-wrapper">
@@ -78,6 +78,10 @@
       const secrectvideo = document.getElementById("secrectvideo")
       secrectvideo.style.opacity = "100";
       secrectvideo.style.height = "inherit";
+      secrectvideo.muted = false;
+      window.setTimeout(() => {
+        secrectvideo.muted = true;
+      }, 8000)
     }
     document.getElementById("easteregg").addEventListener("click", easteregg, false);
 
