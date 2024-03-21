@@ -85,6 +85,24 @@
     }
     document.getElementById("easteregg").addEventListener("click", easteregg, false);
 
+    const sliceOutVideoObject = (content, linkToBlog) => {
+      let mutableContent = content
+      let slicedContent = ""
+      while (mutableContent.indexOf("<object") !== -1) {
+        const start = mutableContent.indexOf("<object")
+        slicedContent += mutableContent.slice(0, start)
+
+        const escapeHatchImage = `<a href="${linkToBlog}" target="_blank" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="621" data-original-width="828" height="240" src="escape_hatch.jpeg" width="320"></a>`
+
+        slicedContent += escapeHatchImage
+
+        const end = mutableContent.indexOf("</object>") + 9
+        mutableContent = mutableContent.slice(end)
+      }
+
+      return slicedContent + mutableContent
+    }
+
     const fetchBlogPosts = async () => {
       const res = await fetch('https://www.googleapis.com/blogger/v3/blogs/5639761990590248969/posts?key=AIzaSyANG8DwLlb4ZSJDN0QHGtzUFQ2X4MHKzXY')
       const resJson = await res.json()
@@ -100,7 +118,8 @@
           entry.appendChild(title)
         }
         const content = document.createElement("div")
-        content.innerHTML = i.content
+
+        content.innerHTML = sliceOutVideoObject(i.content, i.url)
         entry.appendChild(content)
         const author = document.createElement("div")
         author.innerText = `${i.author.displayName} ${i.published.split("T")[0]}`
